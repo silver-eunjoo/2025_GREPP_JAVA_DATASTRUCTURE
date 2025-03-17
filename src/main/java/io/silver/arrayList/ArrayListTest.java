@@ -1,5 +1,7 @@
 package io.silver.arrayList;
 
+import io.silver.stream.Stream;
+
 public class ArrayListTest {
     public static void main(String[] args) {
 
@@ -55,6 +57,15 @@ public class ArrayListTest {
         list.print();
         String value = list.get(0);
         System.out.println("value = " + value);
+
+//        List<String> result = list.stream()
+//                .map(
+//                        el -> el + "!"
+//                ).toList();
+//
+//        for (String s : result) {
+//            System.out.println("result = " + s);
+//        }
 
     }
 }

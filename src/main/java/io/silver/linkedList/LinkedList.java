@@ -1,6 +1,7 @@
 package io.silver.linkedList;
 
 import io.silver.arrayList.List;
+import io.silver.stream.Stream;
 import java.util.Iterator;
 
 public class LinkedList<E> implements List<E> {
@@ -204,6 +205,11 @@ public class LinkedList<E> implements List<E> {
     @Override
     public void add(E e) {
         addLast(e);
+    }
+
+    @Override
+    public Stream<E> stream() {
+        return null;
     }
 
     @Override

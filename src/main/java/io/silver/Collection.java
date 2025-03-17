@@ -1,5 +1,7 @@
 package io.silver;
 
+import io.silver.stream.Stream;
+
 public interface Collection<E> extends Iterable<E>{
 
     void add(E e);
@@ -12,5 +14,6 @@ public interface Collection<E> extends Iterable<E>{
 
     boolean contains(E e);
 
+    Stream<E> stream();
 
 }

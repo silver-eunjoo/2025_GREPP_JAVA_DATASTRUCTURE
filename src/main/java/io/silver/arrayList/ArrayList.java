@@ -1,5 +1,7 @@
 package io.silver.arrayList;
 
+import io.silver.stream.ListStream;
+import io.silver.stream.Stream;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -147,4 +149,8 @@ public class ArrayList<E> implements List<E> {
         }
     }
 
+    @Override
+    public Stream<E> stream() {
+        return new ListStream<>(this);
+    }
 }

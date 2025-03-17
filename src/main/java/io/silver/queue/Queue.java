@@ -2,6 +2,7 @@ package io.silver.queue;
 
 import io.silver.Collection;
 import io.silver.linkedList.LinkedList;
+import io.silver.stream.Stream;
 import java.util.Iterator;
 
 public class Queue<E> implements Collection<E> {
@@ -67,5 +68,10 @@ public class Queue<E> implements Collection<E> {
     @Override
     public Iterator<E> iterator() {
         return elements.iterator();
+    }
+
+    @Override
+    public Stream<E> stream() {
+        return null;
     }
 }

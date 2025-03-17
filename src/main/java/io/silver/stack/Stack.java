@@ -1,6 +1,7 @@
 package io.silver.stack;
 
 import io.silver.Collection;
+import io.silver.stream.Stream;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -103,5 +104,10 @@ public class Stack<E> implements Collection<E> {
             }
             return (E) elements[curIdx--];
         }
+    }
+
+    @Override
+    public Stream<E> stream() {
+        return null;
     }
 }
