@@ -1,6 +1,8 @@
 package io.silver.stack;
 
 import io.silver.Collection;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class Stack<E> implements Collection<E> {
 
@@ -69,8 +71,7 @@ public class Stack<E> implements Collection<E> {
 
     @Override
     public boolean contains(E e) {
-
-        for ( int i =0;i<elements.length; i++){
+        for (int i = 0; i < elements.length; i++) {
             if (elements[i].equals(e)) {
                 return true;
             }
@@ -79,4 +80,28 @@ public class Stack<E> implements Collection<E> {
         return false;
     }
 
+    @Override
+    public Iterator<E> iterator() {
+        return new StackIterator();
+    }
+
+
+    private class StackIterator implements Iterator<E> {
+
+        private int curIdx = elements.length -1;
+
+        @Override
+        public boolean hasNext() {
+            return curIdx >= 0;
+        }
+
+        @Override
+        @SuppressWarnings("unchecked")
+        public E next() {
+            if(!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            return (E) elements[curIdx--];
+        }
+    }
 }

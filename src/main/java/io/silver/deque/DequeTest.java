@@ -13,6 +13,11 @@ public class DequeTest {
         DQ.print();
 
         System.out.println();
+
+        for (String s : DQ) {
+            System.out.println("s = " + s);
+        }
+
         // 덱에서 값을 제거
         System.out.println("큐에서 값을 제거");
         DQ.poll();

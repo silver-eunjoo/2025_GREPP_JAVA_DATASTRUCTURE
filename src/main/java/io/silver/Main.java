@@ -17,6 +17,10 @@ public class Main {
         integerArray1[3] = 4;
         integerArray1[4] = 5;
 
+        for ( int i : integerArray1 ) {
+
+        }
+
         for (int i = 0;i<5;i++){
             integerArray1[i] = i+1;
         }

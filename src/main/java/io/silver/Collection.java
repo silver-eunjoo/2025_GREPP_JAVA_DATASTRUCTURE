@@ -1,6 +1,6 @@
 package io.silver;
 
-public interface Collection<E> {
+public interface Collection<E> extends Iterable<E>{
 
     void add(E e);
 

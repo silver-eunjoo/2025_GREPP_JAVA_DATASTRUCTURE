@@ -33,6 +33,10 @@ public class LinkedListTest {
 
         System.out.println();
 
+        for(String s: list) {
+            System.out.println("s = " + s);
+        }
+
         System.out.println("2번 인덱스의 값을 삭제합니다.");
         list.traverse();
         System.out.println("삭제");

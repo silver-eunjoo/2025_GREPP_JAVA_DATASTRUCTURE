@@ -1,5 +1,8 @@
 package io.silver.arrayList;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 public class ArrayList<E> implements List<E> {
 
     private Object[] elements = {};
@@ -119,5 +122,29 @@ public class ArrayList<E> implements List<E> {
         System.out.println();
     }
 
+    @Override
+    public Iterator<E> iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<E> {
+
+        // current index
+        private int curIdx = 0;
+
+        @Override
+        public boolean hasNext() {
+            return curIdx < elements.length;
+        }
+
+        @Override
+        @SuppressWarnings("all")
+        public E next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            return (E) elements[curIdx++];
+        }
+    }
 
 }

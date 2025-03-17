@@ -5,11 +5,22 @@ public class ArrayListTest {
 
         ArrayList<String> list = new ArrayList<>();
 
+
+        // 반복자 패턴 For-each문 Iterable을 구현하지않으면 동작 x
+//        for (String el : list) {
+//                // 동작하지 않는다.
+//        }
+
         System.out.println("배열에 값 추가");
         list.add("1");
         list.add("2");
         list.add("3");
         list.add("4");
+
+
+        for (String s: list){
+            System.out.println("s = " + s);
+        }
 
         list.print();
         System.out.println();

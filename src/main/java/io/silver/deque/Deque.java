@@ -2,6 +2,7 @@ package io.silver.deque;
 
 import io.silver.Collection;
 import io.silver.linkedList.LinkedList;
+import java.util.Iterator;
 
 public class Deque<E> implements Collection<E> {
 
@@ -80,5 +81,10 @@ public class Deque<E> implements Collection<E> {
 
     public void print() {
         this.elements.traverse();
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return elements.iterator();
     }
 }
