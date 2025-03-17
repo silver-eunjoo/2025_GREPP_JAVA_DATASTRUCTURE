@@ -1,6 +1,7 @@
 package io.silver.stack;
 
 import io.silver.Collection;
+import io.silver.stream.StackStream;
 import io.silver.stream.Stream;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -108,6 +109,6 @@ public class Stack<E> implements Collection<E> {
 
     @Override
     public Stream<E> stream() {
-        return null;
+        return new StackStream<>(this);
     }
 }

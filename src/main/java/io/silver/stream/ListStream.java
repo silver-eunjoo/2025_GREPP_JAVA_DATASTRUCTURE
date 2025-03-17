@@ -3,6 +3,7 @@ package io.silver.stream;
 import io.silver.Collection;
 import io.silver.arrayList.ArrayList;
 import io.silver.arrayList.List;
+
 import java.util.Iterator;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -69,7 +70,7 @@ public class ListStream<T> extends AbstractStream<T>{
 
         Iterator<T> iterator = iterator();
 
-        while(iterator().hasNext()) {
+        while(iterator.hasNext()) {
             T item = iterator.next();
             list.add(item);
         }

@@ -3,6 +3,9 @@ package io.silver.stream;
 import io.silver.Collection;
 import io.silver.arrayList.ArrayList;
 import io.silver.linkedList.LinkedList;
+import io.silver.queue.Queue;
+import io.silver.stack.Stack;
+
 import java.util.Iterator;
 import java.util.function.Consumer;
 
@@ -25,9 +28,15 @@ public abstract class AbstractStream<T> implements Stream<T>{
     }
 
     protected <R> Collection<R> getCollection() {
-        if (this.collection instanceof LinkedList<T> ) {
+        if (this.collection instanceof LinkedList<?> ) {
             return new LinkedList<>();
+        } else if (this.collection instanceof Stack<?>) {
+            return new Stack<>();
+        } else if (this.collection instanceof Queue<?>)  {
+            return new Queue<>();
         }
+
+
         return new ArrayList<>();
     }
 }

@@ -2,6 +2,7 @@ package io.silver.queue;
 
 import io.silver.Collection;
 import io.silver.linkedList.LinkedList;
+import io.silver.stream.QueueStream;
 import io.silver.stream.Stream;
 import java.util.Iterator;
 
@@ -72,6 +73,6 @@ public class Queue<E> implements Collection<E> {
 
     @Override
     public Stream<E> stream() {
-        return null;
+        return new QueueStream<>(this);
     }
 }

@@ -1,6 +1,7 @@
 package io.silver.linkedList;
 
 import io.silver.arrayList.List;
+import io.silver.stream.ListStream;
 import io.silver.stream.Stream;
 import java.util.Iterator;
 
@@ -208,11 +209,6 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
-    public Stream<E> stream() {
-        return null;
-    }
-
-    @Override
     public void remove(E e) { // 인덱스 x, 중복된 값이 있을 때 발견하면 삭제 후 중단해야 함.
 
         if (isEmpty()) {
@@ -299,6 +295,11 @@ public class LinkedList<E> implements List<E> {
 
     }
 
+    /**
+     * Returns an iterator over elements of type {@code T}.
+     *
+     * @return an Iterator.
+     */
     @Override
     public Iterator<E> iterator() {
         return new LinkedListIterator();
@@ -310,7 +311,7 @@ public class LinkedList<E> implements List<E> {
 
         @Override
         public boolean hasNext() {
-            return  cur != null;
+            return cur != null;
         }
 
         @Override
@@ -321,5 +322,10 @@ public class LinkedList<E> implements List<E> {
 
             return data;
         }
+    }
+
+    @Override
+    public Stream<E> stream() {
+        return new ListStream<>(this);
     }
 }
